@@ -91,6 +91,10 @@ let isAnimating = false;        // initally set, so that website automatically d
 function init() {
     const cards = document.querySelectorAll('.card');           // one for the card itself
     const backbutton = document.getElementById('back-button');        // one for back button in each card
+    const handImage = document.querySelector('.hand-image');
+    const photoModal = document.getElementById('photo-modal');
+    const closeModal = document.getElementById('close-modal');
+
 
     cards.forEach(card => {
         card.addEventListener('click', function() {
@@ -103,6 +107,23 @@ function init() {
     backbutton.addEventListener('click', function() {
         if (isAnimating) return;
         hideContent();
+    });
+
+    // Hand image click to show photo modal
+    handImage.addEventListener('click', function() {
+        photoModal.classList.add('active');
+    });
+
+    // Close modal when clicking the close button
+    closeModal.addEventListener('click', function() {
+        photoModal.classList.remove('active');
+    });
+
+    // Close modal when clicking outside the content
+    photoModal.addEventListener('click', function(e) {
+        if (e.target === photoModal) {
+            photoModal.classList.remove('active');
+        }
     });
 }
 
