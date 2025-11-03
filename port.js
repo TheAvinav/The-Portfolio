@@ -28,6 +28,24 @@ const cardData = {
                     'Computer Science and Engineering',
                     'Passionate about Web-App Development, Deep Learning, and Organizational Communication'
                 ]
+            },
+            {
+                title: 'Sri Chaitanya Pratibha Junior College',
+                period: '2021-2023',
+                role: 'Higher Secondary Education',
+                description: [
+                    'Specialized in Mathematics, Physics, and Chemistry',
+                    'Graduated with Distinction, score of 98.2% in Board Exams'
+                ]
+            },
+            {
+                title: 'Silver Oaks International School',
+                period: 'Up to 2021',
+                role: 'Secondary Education',
+                description: [
+                    'Completed CBSE curriculum with a focus on Various Subjects',
+                    'Graduated with Distinction, score of 95% in Board Exams'
+                ]
             }
         ]
     },
