@@ -99,7 +99,12 @@ const cardData = {
             {
                 name: 'Technical Skills',
                 items: ['Machine Learning', 'Data Annotation', 'Web Development', 'Data Structures & Algorithms']
+            },
+            {
+                name: 'Certification from Oracle',
+                items: ['Certification in OCI Generative AI Fundamentals using RAG and Langchain']
             }
+
         ]
     }
 };
