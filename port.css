@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', monospace;
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 
 .background {
     position: fixed;

@@ -84,7 +84,7 @@ const cardData = {
             }
         ]
     },
-    skills: {
+        skills: {
         icon: '⚡',
         title: 'Skills',
         categories: [
@@ -101,8 +101,8 @@ const cardData = {
                 items: ['Machine Learning', 'Data Annotation', 'Web Development', 'Data Structures & Algorithms']
             },
             {
-                name: 'Certification from Oracle',
-                items: ['Certification in OCI Generative AI Fundamentals using RAG and Langchain']
+                name: 'Certifications',
+                items: ['Oracle - OCI Generative AI Fundamentals using RAG and Langchain']
             }
 
         ]
