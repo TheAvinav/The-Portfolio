@@ -1,0 +1,591 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #fed7aa, #fef3c7, #fed7aa);
+    z-index: -1;
+}
+
+
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.bg-circle-1 {
+    top: 80px;
+    left: 40px;
+    width: 288px;
+    height: 288px;
+    background-color: #fb923c;
+}
+
+.bg-circle-2 {
+    bottom: 80px;
+    right: 40px;
+    width: 384px;
+    height: 384px;
+    background-color: #fbbf24;
+}
+
+/* Title Text */
+.content {
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    text-align: center;
+    padding: 48px 16px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 1.125rem;
+    color: #374151;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+/* Main Cards Display */
+main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+#card-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+}
+
+#card-view h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 64px;
+}
+
+/* For the image of the hand */
+.hand-container {
+    position: relative;
+    width: 700px;
+    height: 500px;
+}
+
+.hand-image {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-55%);
+    z-index: 100;
+    width: 70%;
+    max-width: 600px;
+    pointer-events: none;
+    opacity: 1;
+    object-fit: contain;
+    transition: transform 0.3s ease, z-index 0s 0s;
+}
+
+/* When any card is hovered, move hand back */
+.hand-container:has(.card:hover) .hand-image {
+    z-index: 5;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+}
+
+/* Cards in the Hand */
+.cards-container {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 10;
+}
+
+.card {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Normal display, no mouse hover */
+.card-0 {
+    transform: translateX(-50%) translateX(-120px) translateY(22.5px) rotate(-18deg);
+    z-index: 10;
+}
+
+.card-1 {
+    transform: translateX(-50%) translateX(-40px) translateY(7.5px) rotate(-6deg);
+    z-index: 11;
+}
+
+.card-2 {
+    transform: translateX(-50%) translateX(40px) translateY(7.5px) rotate(6deg);
+    z-index: 12;
+}
+
+.card-3 {
+    transform: translateX(-50%) translateX(120px) translateY(22.5px) rotate(18deg);
+    z-index: 13;
+}
+
+.card:hover {
+    z-index: 150 !important;
+}
+
+/* This is when card is hovered over, smoothens it out */
+.card-0:hover {
+    transform: translateX(-50%) translateX(-120px) translateY(-10px) rotate(-18deg) scale(1.05);
+}
+
+.card-1:hover {
+    transform: translateX(-50%) translateX(-40px) translateY(-22.5px) rotate(-6deg) scale(1.05);
+}
+
+.card-2:hover {
+    transform: translateX(-50%) translateX(40px) translateY(-22.5px) rotate(6deg) scale(1.05);
+}
+
+.card-3:hover {
+    transform: translateX(-50%) translateX(120px) translateY(-10px) rotate(18deg) scale(1.05);
+}
+
+.card-inner {
+    width: 224px;
+    height: 320px;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* For the UI of the card itself */
+.card-experience {
+    background: linear-gradient(to bottom right, #fb923c, #ef4444);
+}
+
+.card-education {
+    background: linear-gradient(to bottom right, #f97316, #f59e0b);
+}
+
+.card-projects {
+    background: linear-gradient(to bottom right, #fbbf24, #eab308);
+}
+
+.card-skills {
+    background: linear-gradient(to bottom right, #facc15, #fb923c);
+}
+
+/* Div for the entire deck */
+.card-suit {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.2;
+}
+
+.card-suit.top {
+    top: 12px;
+    right: 12px;
+}
+
+.card-suit.bottom {
+    bottom: 12px;
+    left: 12px;
+}
+
+/* The emoji */
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.card-inner h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-border {
+    position: absolute;
+    inset: 12px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+/* To open only when clicked */
+.hidden {
+    display: none !important;
+}
+
+#content-view {
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Upon clicking, return back to Hand */
+#back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+}
+
+#back-button:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.arrow {
+    font-size: 1.25rem;
+}
+
+/* Actual Display of Content */
+#content-container {
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    animation: expandCard 0.5s ease-out;
+}
+
+@keyframes expandCard {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* To help transition between the divs of Hand, Card and Content */
+.content-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #fb923c;
+    padding-bottom: 16px;
+}
+
+.content-icon {
+    font-size: 3rem;
+}
+
+.content-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.content-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content-item {
+    background-color: #fff7ed;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.content-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* JS Attribute, shows when clicked on card to show the details */
+/* Items [not skills], vertical divs */
+.item-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.item-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.item-period {
+    color: #ea580c;
+    font-weight: 500;
+    background-color: white;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    font-size: 0.875rem;
+    align-self: flex-start;
+}
+
+.item-role {
+    font-size: 1.125rem;
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.item-tools {
+    margin-bottom: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.item-tools span:first-child {
+    font-weight: bold;
+    color: #374151;
+}
+
+.item-tools span:last-child {
+    color: #4b5563;
+}
+
+.item-description {
+    list-style: none;
+    padding: 0;
+}
+
+.item-description li {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.item-description li::before {
+    content: "•";
+    color: #f97316;
+    margin-top: 4px;
+}
+
+/* Since multiple boxes in skills horizontally */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.skill-category {
+    background-color: #fff7ed;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #fb923c;
+    padding-bottom: 8px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.skill-category li::before {
+    content: "▸";
+    color: #f97316;
+    margin-top: 2px;
+}
+
+/* Footer of the Webpage */
+footer {
+    margin-top: 64px;
+    background-color: #1f2937;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.social-link.linkedin {
+    background-color: #2563eb;
+}
+
+.social-link.linkedin:hover {
+    background-color: #1d4ed8;
+}
+
+.social-link.github {
+    background-color: #374151;
+}
+
+.social-link.github:hover {
+    background-color: #4b5563;
+}
+
+.social-link.email {
+    background-color: #ea580c;
+}
+
+.social-link.email:hover {
+    background-color: #c2410c;
+}
+
+.social-link .icon {
+    font-weight: bold;
+}
+
+.footer-info {
+    color: #d1d5db;
+    margin-bottom: 4px;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+/* @keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.content header{
+    animation: pulse 4s infinite ease-in-out;
+} */
+
+
+/* Mobile version configurations */
+@media (max-width: 768px) {
+    .hand-container {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .hand-image {
+        bottom: 60px;
+        width: 80%;
+        max-width: 450px;
+        transform: translateX(-50%);
+    }
+    
+    .card-inner {
+        width: 180px;
+        height: 260px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    #content-container {
+        padding: 24px;
+    }
+}
