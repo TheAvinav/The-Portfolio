@@ -1,4 +1,3 @@
-
 // Interactive, works when clicked, thus linked to the event bubbling
 const cardData = {
     experience: {
@@ -6,12 +5,34 @@ const cardData = {
         title: 'Experience',
         items: [
             {
-                title: 'Internship at JolyAI',
-                period: 'June 2025 - August 2025',
-                role: 'Data Annotation Role',
+                title: 'Tech Mahindra',
+                period: 'July 2026 - Present',
+                role: 'Software Engineering Intern (Hybrid)',
                 description: [
-                    'Engineered and classified large-scale photographic datasets to enhance training accuracy for core machine learning pipelines.',
-                    'Gained hands-on exposure to AI tools and workflows in a real-world, high-impact startup environment using Pytorch libraries and Multilabel Classification.'
+                    'Developed a production-oriented Java Spring Boot microservice using layered architecture and REST APIs for enterprise backend workflows.',
+                    'Built an interactive React interface integrated with Spring Data JPA and PostgreSQL for persistent backend operations.',
+                    'Implemented JWT authentication, role-based authorization, and batch processing following secure backend development practices.'
+                ]
+            },
+            {
+                title: 'Visvesvaraya National Institute of Technology',
+                period: 'Jan 2026 - Sep 2026',
+                role: 'AI Evaluation Engineer, Nagpur, India',
+                description: [
+                    'Architected a Python-based LLM evaluation pipeline using Generative AI, improving evaluation accuracy from a global standard of 15% to 50%.',
+                    'Engineered a two-pass JSON-based evaluation workflow to reduce anchoring bias and isolate mathematical reasoning errors.',
+                    'Integrated LLM APIs into scalable backend workflows to automatically evaluate responses and store structured grading metrics across large datasets.',
+                    'Research work is being prepared for journal publication based on the developed LLM evaluation methodology.'
+                ]
+            },
+            {
+                title: 'JolyAI - AI-Powered Photo Management Platform',
+                period: 'June 2025 - August 2025',
+                role: 'Data Annotation Intern (Remote)',
+                description: [
+                    'Developed automated Python pipelines using PyTorch and OpenCV to classify and process a dataset of over 50,000 images.',
+                    'Implemented multi-label image classification techniques to extract complex visual contexts and improve training data quality.',
+                    'Optimized large-scale annotation workflows, accelerating model training in a fast-paced startup environment.'
                 ]
             }
         ]
@@ -22,11 +43,11 @@ const cardData = {
         items: [
             {
                 title: 'Visvesvaraya National Institute of Technology',
-                period: 'Third Year Student',
+                period: 'Final Year Student · Graduating May 2026',
                 role: 'Bachelor of Technology',
                 description: [
                     'Computer Science and Engineering',
-                    'Passionate about Web-App Development, Deep Learning, and Organizational Communication'
+                    'Passionate about Backend Engineering, AI/ML, and Full-Stack Development'
                 ]
             },
             {
@@ -54,57 +75,64 @@ const cardData = {
         title: 'Projects',
         items: [
             {
-                title: 'Automated DL-Integrated Photograph Segregator',
-                tools: 'Python, Pytorch, Multilabel Classification, CLIP (OpenAI API)',
+                title: 'Warp - The Perfected P2P File Sharing Service',
+                period: 'Mar 2026 - Apr 2026',
+                tools: 'React, WebRTC, Socket.IO, REST APIs',
                 description: [
-                    'Executed precise data annotation on thousands of images using Pytorch libraries, improving model performance in recognizing complex visual context and emotional tones.',
-                    'Sorts through given dataset to segregate photos based on object of photo, and selects the best poses.',
-                    'Dataset can handle thousands of photos, delivering neatly organized and best photos.'
+                    'Built a peer-to-peer file sharing application using React and WebRTC, enabling secure browser-to-browser file transfer with ICE connectivity and hash verification.',
+                    'Enabled direct peer-to-peer communication without server-side file storage, improving privacy and transfer efficiency.',
+                    'Implemented multi-room, low-latency sharing using WebRTC-based chunked transfer protocols.'
                 ]
             },
             {
-                title: 'Text-Based Dungeon Crawler',
-                tools: 'C++, MySQL (Basic)',
+                title: 'Sentinel - Cyber Threat Intelligence & Security Dashboard',
+                tools: 'Python, FastAPI, React, PostgreSQL, Redis, Background Workers, Local LLMs',
                 description: [
-                    'An interactive text-based in-terminal dungeon crawler game with fully randomized levels and enemies.',
-                    'Character progression compatibility with ability to use previous save files.',
-                    'User-login interface allowing multiple users from anywhere.',
-                    'Infinitely expandable roguelike gameplay.'
+                    'Periodically ingests and normalizes security data from multiple public sources using background workers, storing structured threat intelligence records in PostgreSQL.',
+                    'Uses Redis to cache frequently requested results, with a FastAPI backend exposing processed intelligence through APIs consumed by a React dashboard.',
+                    'Integrates a local LLM to generate smarter reports and summaries from collected intelligence, combining ingestion, processing, caching, and AI-assisted analysis in one system.'
                 ]
             },
             {
-                title: 'Pharmacy Medication Inventory Handler',
-                tools: 'C, File Handling',
+                title: 'Anon-Note - The Anonymous Confession Page',
+                period: 'Oct 2025 - Nov 2025',
+                tools: 'HTML, CSS, JS, MongoDB, Express, React (MERN)',
                 description: [
-                    'Designed and implemented a high-performance inventory management system leveraging AVL and B-Tree data structures.',
-                    'Efficient real-time tracking of medication stock, sales, and expiration dates.',
-                    'Check supplier information, sales information, calculate turnovers, and identify highest selling medicines.',
-                    'Real-time tracking of medicine expiration dates with filtering capabilities.'
+                    'Designed and deployed a high-performance anonymous confession page using the MERN stack, deployed live via Netlify and Render.',
+                    'Engineered a system enabling users to anonymously post, react, and comment on text and image notes.',
+                    'Implemented active moderation workflows and real-time tracking with dedicated Admin and Login functionalities.'
                 ]
             }
         ]
     },
-        skills: {
+    skills: {
         icon: '⚡',
         title: 'Skills',
         categories: [
             {
                 name: 'Programming Languages',
-                items: ['C/C++', 'Python', 'HTML & CSS', 'JavaScript']
+                items: ['Python', 'Java', 'C/C++', 'JavaScript', 'HTML/CSS', 'SQL']
             },
             {
-                name: 'Frameworks & Tools',
-                items: ['PyQt5 (Python)', 'Pytorch (Basics)', 'Local File Handling', 'MySQL (Basic)']
+                name: 'Web & Backend',
+                items: ['React', 'FastAPI', 'Spring Boot', 'Spring Data JPA', 'REST APIs']
             },
             {
-                name: 'Technical Skills',
-                items: ['Machine Learning', 'Data Annotation', 'Web Development', 'Data Structures & Algorithms']
+                name: 'Databases & DevOps',
+                items: ['PostgreSQL', 'MySQL', 'Docker', 'Docker Compose', 'Git/GitHub', 'GitHub Actions']
             },
             {
-                name: 'Certifications',
-                items: ['Oracle - OCI Generative AI Fundamentals using RAG and Langchain']
+                name: 'AI/ML',
+                items: ['LLMs', 'Generative AI', 'RAG', 'Agentic AI', 'NLP Pipelines', 'Semantic Embeddings', 'BERTScore', 'SBERT', 'PyTorch', 'OpenCV']
+            },
+            {
+                name: 'Engineering',
+                items: ['Data/ML Pipelines', 'JWT Authentication', 'Batch Processing', 'Selenium', 'Oracle21c']
+            },
+            {
+                name: 'Core Coursework',
+                items: ['Data Structures & Algorithms', 'Operating Systems', 'Database Management Systems', 'Computer Networks', 'Cryptography', 'Object Oriented Programming']
             }
-
         ]
     }
 };
